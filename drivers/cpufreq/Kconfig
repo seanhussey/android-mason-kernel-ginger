@@ -208,6 +208,13 @@ config CPU_FREQ_DEFAULT_GOV_SavagedZen
 	help
 	  Use the CPUFreq governor 'SavagedZen' as default.
 
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+
+	bool "lionheart"
+	select CPU_FREQ_GOV_LIONHEART
+	help
+	  Use the CPUFreq governor 'lionheart' as default.
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -387,6 +394,15 @@ config CPU_FREQ_GOV_SavagedZen
 	depends on CPU_FREQ
 	help
 	  'Savaged-Zen' - a "smartass" based governor
+
+	If in doubt, say N.
+
+config CPU_FREQ_GOV_LIONHEART
+
+	tristate "'lionheart' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'lionheart' - the lionheart governor
 
 	If in doubt, say N.
 

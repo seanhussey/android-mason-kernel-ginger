@@ -20,6 +20,7 @@ obj-$(CONFIG_CPU_FREQ_GOV_WHEATLEY)     += cpufreq_wheatley.o
 obj-$(CONFIG_CPU_FREQ_GOV_INTERACTIVEX) += cpufreq_interactivex.o
 obj-$(CONFIG_CPU_FREQ_GOV_MINMAX)       += cpufreq_minmax.o
 obj-$(CONFIG_CPU_FREQ_GOV_SavagedZen)   += cpufreq_savagedzen.o
+obj-$(CONFIG_CPU_FREQ_GOV_LIONHEART)    += cpufreq_lionheart.o
 
 # CPUfreq cross-arch helpers
 obj-$(CONFIG_CPU_FREQ_TABLE)			+= freq_table.o
