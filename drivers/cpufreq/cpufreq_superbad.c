@@ -113,10 +113,10 @@ static unsigned int threshold_freq;
  * go below this frequency.
  * Set awake_min_freq=0 to disable this behavior.
  */
-#define DEFAULT_AWAKE_MIN_FREQ 368640;
+#define DEFAULT_AWAKE_MIN_FREQ 384000;
 static unsigned int awake_min_freq;
 
-static unsigned int suspendfreq = 422400;
+static unsigned int suspendfreq = 384000;
 
 /*
  * Sampling rate, I highly recommend to leave it at 2.
