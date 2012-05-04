@@ -370,7 +370,6 @@ extern struct cpufreq_governor cpufreq_gov_lagfree;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_INTERACTIVE)
 extern struct cpufreq_governor cpufreq_gov_interactive;
 #define CPUFREQ_DEFAULT_GOVERNOR	(&cpufreq_gov_interactive)
-<<<<<<< HEAD
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SMARTASS)
 extern struct cpufreq_governor cpufreq_gov_smartass;
 #define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_smartass)
@@ -410,6 +409,15 @@ extern struct cpufreq_governor cpufreq_gov_scary;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_WHEATLEY)
 extern struct cpufreq_governor cpufreq_gov_wheatley;
 #define CPUFREQ_DEFAULT_GOVERNOR  (&cpufreq_gov_wheatley)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SUPERBAD)
+extern struct cpufreq_governor cpufreq_gov_superbad;
+#define CPUFREQ_DEFAULT_GOVERNOR  (&cpufreq_gov_superbad)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_VIRTUOUS)
+extern struct cpufreq_governor cpufreq_gov_virtuous;
+#define CPUFREQ_DEFAULT_GOVERNOR  (&cpufreq_gov_virtuous)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_SMOOTHASS)
+extern struct cpufreq_governor cpufreq_gov_smoothass;
+#define CPUFREQ_DEFAULT_GOVERNOR  (&cpufreq_gov_smoothass)
 #endif
 
 /*********************************************************************

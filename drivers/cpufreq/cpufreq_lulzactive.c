@@ -36,7 +36,7 @@
 #define LULZACTIVE_AUTHOR	"tegrak"
 
 // if you changed some codes for optimization, just write your name here.
-#define LULZACTIVE_TUNER "simone201"
+#define LULZACTIVE_TUNER "atyoung"
 
 #define LOGI(fmt...) printk(KERN_INFO "[lulzactive] " fmt)
 #define LOGW(fmt...) printk(KERN_WARNING "[lulzactive] " fmt)
@@ -100,7 +100,7 @@ enum {
 /*
  * CPU freq will be increased if measured load > inc_cpu_load;
  */
-#define DEFAULT_INC_CPU_LOAD 60
+#define DEFAULT_INC_CPU_LOAD 70
 static unsigned long inc_cpu_load;
 
 /*
@@ -114,7 +114,7 @@ static unsigned long dec_cpu_load;
  * Increasing frequency table index
  * zero disables and causes to always jump straight to max frequency.
  */
-#define DEFAULT_PUMP_UP_STEP 1
+#define DEFAULT_PUMP_UP_STEP 2
 static unsigned long pump_up_step;
 
 /*
@@ -130,12 +130,16 @@ static unsigned long pump_down_step;
 static unsigned int suspending;
 static unsigned int early_suspended;
 
-#define SCREEN_OFF_LOWEST_STEP 		(0xffffffff)
+#define SCREEN_OFF_LOWEST_STEP 		(2)
 #define DEFAULT_SCREEN_OFF_MIN_STEP	(SCREEN_OFF_LOWEST_STEP)
 static unsigned long screen_off_min_step;
 
 #define DEBUG 0
 #define BUFSZ 128
+
+#define LATENCY_MULTIPLIER			(1000)
+#define MIN_LATENCY_MULTIPLIER			(100)
+#define TRANSITION_LATENCY_LIMIT		(10 * 1000 * 1000)
 
 #if DEBUG
 #include <linux/proc_fs.h>
@@ -230,7 +234,7 @@ static
 struct cpufreq_governor cpufreq_gov_lulzactive = {
 	.name = "lulzactive",
 	.governor = cpufreq_governor_lulzactive,
-	.max_transition_latency = 9000000,
+	.max_transition_latency = TRANSITION_LATENCY_LIMIT,
 	.owner = THIS_MODULE,
 };
 
